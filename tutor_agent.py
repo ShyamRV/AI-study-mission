@@ -32,10 +32,7 @@ client = OpenAI(
     timeout=45.0,
     max_retries=2,
 )
-agent = Agent(
-    name="study-tutor-agent",
-    seed=os.getenv("TUTOR_AGENT_SEED") or None,
-)
+agent = Agent(name="study-tutor-agent")
 chat_protocol = Protocol(spec=chat_protocol_spec)
 
 # Hosted Agentverse agents reset module globals between invocations. Keep all

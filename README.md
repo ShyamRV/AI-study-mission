@@ -55,22 +55,7 @@ you want users to discover it through ASI:One.
 The Tutor uses Agent Storage for mission state because Hosted Agent globals
 reset between invocations. No database or external web server is required.
 
-## Local checks
-
-Python 3.11 is recommended.
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python run_local.py
-```
-
-For local imports, set the values from `.env.example` in your shell. The
-Agentverse editor reads values from Agent Secrets instead of the local `.env`.
-
 ## Security
 
-Never commit `.env`. The previous API key in this workspace was exposed in
-plain text and must be revoked and replaced before deployment.
+Store API keys only in Agentverse Agent Secrets. Never paste secrets directly
+into an agent source file or commit them to Git.

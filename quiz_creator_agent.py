@@ -18,10 +18,7 @@ client = OpenAI(
     timeout=45.0,
     max_retries=2,
 )
-agent = Agent(
-    name="study-quiz-creator-agent",
-    seed=os.getenv("QUIZ_AGENT_SEED") or None,
-)
+agent = Agent(name="study-quiz-creator-agent")
 
 
 class QuizRequest(Model):

@@ -19,10 +19,7 @@ client = OpenAI(
     timeout=30.0,
     max_retries=1,
 )
-agent = Agent(
-    name="study-evaluator-agent",
-    seed=os.getenv("EVALUATOR_AGENT_SEED") or None,
-)
+agent = Agent(name="study-evaluator-agent")
 
 
 class EvaluateRequest(Model):
